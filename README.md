@@ -1,3 +1,27 @@
+# drum-online
+
+
+# Pitch
+This app allows users to learn to play the drums. This is achieved by tracking progress, providing videos, articles, and practice materials. Users will also be able to save videos and articles they enjoy, send those videos to other users you can connect and learn with and come back to them later. Users will be recommended related videos and articles related to the most recently viewed, and will also be able to set times to receive text reminders for practice
+
+# MVP
+- User Login/Registration
+- Profile page, discover page(searchbar), Social page(feed and messaging)
+- Save videos and article
+
+# In the making
+- Progress Tracking
+- Add friends
+- Direct Messaging
+- Text reminders for practice
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
