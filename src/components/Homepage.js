@@ -4,8 +4,9 @@ import React from 'react';
 class Homepage extends React.Component {
     render() {
         return (
+            //Homepage structure = Navigation Sidebar on left, Main page to the right.
             <div className="full-page">
-                <div className="sidebar">
+                <div className="sidebar"> {/*Sidebar oriented vertically, navigation is to other components*/}
                     <div className="profile-pic"></div>
                     <div className="Login-Signup"></div>
                     <div className="Logout"></div>
