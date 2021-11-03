@@ -20,12 +20,13 @@ class SavedArts extends React.Component {
                     <div className="login-signup">Login/Sign-Up</div>
                     <div className="logout">Logout</div>
                     <div className="navigation">
-                        <a>Profile</a>
-                        <a>Featured</a>
-                        <a>Favorites</a>
-                        <a>Recents</a>
-                        <a>Articles</a>
-                        <a>Videos</a>
+                        <a href="./Profile.js">Profile</a>
+                        <a href="./Homepage.js">Featured</a>
+                        <a href="./Saved-Arts.js">Saved Articles</a>
+                        <a href="./Saved-Vids.js">Saved Videos</a>
+                        <a href="Recents.js">Recents</a>
+                        <a href="Articles.js">Articles</a>
+                        <a href="Videos.js">Videos</a>
                     </div>
                 </div>
                 <div className="main-body">

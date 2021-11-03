@@ -4,7 +4,7 @@ import { CgProfile } from 'react-icons/cg';
 import { IconContext } from 'react-icons';
 import { GiDrumKit } from 'react-icons/gi';
 
-class SavedVids extends React.Component {
+class Recents extends React.Component {
     render() {
         return (
             //Homepage structure = Navigation Sidebar on left, Main page to the right.
@@ -44,4 +44,4 @@ class SavedVids extends React.Component {
     }
 };
 
-export default SavedVids;
+export default Recents;
