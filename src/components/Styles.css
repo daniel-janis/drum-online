@@ -18,20 +18,26 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right-style: solid;
+    border-style: solid;
+    border-top-style: none;
     border-color: rgb(150, 120, 21);
     border-width: 2px;
     background-color: rgb(80, 105, 138);
-    z-index: 15;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 9;
     color: white;
 }
 
 .main-body {
     height: 100vh;
-    width: 85%;
+    width: 100%;
     margin: 0px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: 80px;
 }
 
 .navigation {
@@ -41,14 +47,23 @@ body {
 
 .navigation a {
     margin-top: 50px;
+    color: white;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    transform: scale(1.1);
+    color: rgb(182, 158, 80);
+}
+
+.navigation a:active {
+    transform: scale(1.05);
+    color: rgb(182, 158, 80);
 }
 
 .header {
     width: 100%;
     height: 80px;
-    border-bottom-style: solid;
-    border-color: rgb(150, 120, 21);
-    border-width: 2px;
     background-color: rgb(80, 105, 138);
     display: flex;
     flex-direction: row;
@@ -59,12 +74,15 @@ body {
     left: 0;
     z-index: 10;
     color: white;
+    border-style: solid;
+    border-color: rgb(150, 120, 21);
+    border-width: 2px;
 }
 
 .profile-pic {
     width: 100px;
     height: 100px;
-    margin-top: 75px;
+    margin-top: 100px;
 }
 
 .userName{
@@ -84,9 +102,10 @@ body {
 }
 
 .logoAndTitle {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: baseline;
     position: relative;
     bottom: -15px;
@@ -95,4 +114,6 @@ body {
 .logo {
     height: 75px;
     width: 75px;
+    margin-right: 60px;
+    margin-left: 60px;
 }
