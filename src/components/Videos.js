@@ -4,7 +4,7 @@ import { CgProfile } from 'react-icons/cg';
 import { IconContext } from 'react-icons';
 import { GiDrumKit } from 'react-icons/gi';
 
-class Homepage extends React.Component {
+class Videos extends React.Component {
     render() {
         return (
             //Homepage structure = Navigation Sidebar on left, Main page to the right.
@@ -43,4 +43,4 @@ class Homepage extends React.Component {
     }
 };
 
-export default Homepage;
+export default Videos;

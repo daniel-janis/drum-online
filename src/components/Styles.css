@@ -1,0 +1,98 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    background-color: rgb(224, 224, 224);
+}
+
+.full-page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 15%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right-style: solid;
+    border-color: rgb(150, 120, 21);
+    border-width: 2px;
+    background-color: rgb(80, 105, 138);
+    z-index: 15;
+    color: white;
+}
+
+.main-body {
+    height: 100vh;
+    width: 85%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation a {
+    margin-top: 50px;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    border-bottom-style: solid;
+    border-color: rgb(150, 120, 21);
+    border-width: 2px;
+    background-color: rgb(80, 105, 138);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 10;
+    color: white;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    margin-top: 75px;
+}
+
+.userName{
+    margin-bottom: 25px;
+    font-size: x-large;
+}
+
+.login-signup {
+    font-size: small;
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+.logout {
+    font-size: small;
+    text-decoration: underline;
+}
+
+.logoAndTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    position: relative;
+    bottom: -15px;
+}
+
+.logo {
+    height: 75px;
+    width: 75px;
+}
