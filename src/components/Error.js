@@ -8,6 +8,8 @@ import { GiDrumKit } from 'react-icons/gi';
 class Error extends React.Component {
     render() {
         return (
+            //Homepage structure = Navigation Sidebar on left, Main page to the right.
+            //Sidebar oriented vertically, navigation is to other components
             <div className="full-page">
                 <div className="sidebar"> 
                     <div className="profile-pic">
