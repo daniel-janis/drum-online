@@ -47,7 +47,7 @@ class Error extends React.Component {
                         </IconContext.Provider>
                         </div>  
                     </div>
-                    <div className="error"><h1>Oops! Looks like this page doesn't exist. Head back to our home page <Link to="/homepage">here</Link>.</h1></div>
+                    <div className="error"><h3>Oops! Looks like this page doesn't exist. Head back to our home page <Link to="/homepage">here</Link>.</h3></div>
                 </div>
             </div>
         )
