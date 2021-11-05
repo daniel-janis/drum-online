@@ -47,7 +47,14 @@ class Articles extends React.Component {
                         </IconContext.Provider>
                         </div>  
                     </div>
-                    <div><h1>Articles</h1></div>
+                    <div className="pageContent">
+                        <div className="contentHeader">
+                            <h1>Articles</h1>
+                        </div>
+                        <div className="contentContainer">
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         )

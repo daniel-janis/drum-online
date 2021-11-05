@@ -124,3 +124,33 @@ body {
     margin-top: 100px;
     margin-left: 100px;
 }
+
+.pageContent {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.contentHeader {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 50px;
+    text-decoration: underline;
+}
+
+.contentContainer {
+    height:auto;
+    width: 100%;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+}

@@ -47,7 +47,14 @@ class Homepage extends React.Component {
                         </IconContext.Provider>
                         </div>  
                     </div>
-                    <div><h1>Homepage/Featured</h1></div>
+                    <div className="pageContent">
+                        <div className="contentHeader">
+                            <h1>Featured Lesson</h1>
+                        </div>
+                        <div className="contentContainer">
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         )

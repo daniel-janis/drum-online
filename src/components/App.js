@@ -25,6 +25,8 @@ class App extends React.Component{
                     <Route path="/recents" component={Recents} />
                     <Route path="/saved-articles" component={SavedArts} />
                     <Route path="/saved-videos" component={SavedVids} />
+                    {/* <Route path="/login" component={Login} />
+                    <Route path="/register" component={Register} /> */}
                     <Route component={Error} />
                 </Switch>
             </Router>

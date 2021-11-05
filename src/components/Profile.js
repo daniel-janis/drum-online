@@ -47,12 +47,18 @@ class Profile extends React.Component {
                         </IconContext.Provider>
                         </div>  
                     </div>
-                    <div><h1>Profile</h1></div>
-                    <div>
-                        <Link to="/saved-articles">Saved Articles</Link>
-                    </div>
-                    <div>
-                        <Link to="/saved-videos">Saved Videos</Link>
+                    <div className="pageContent">
+                        <div className="contentHeader">
+                            <h1>Your Profile</h1>
+                        </div>
+                        <div className="contentContainer">      
+                            <div>
+                                <Link to="/saved-articles">Saved Articles</Link>
+                            </div>
+                            <div>
+                                <Link to="/saved-videos">Saved Videos</Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

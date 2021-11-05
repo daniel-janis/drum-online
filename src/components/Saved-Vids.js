@@ -47,7 +47,14 @@ class SavedVids extends React.Component {
                         </IconContext.Provider>
                         </div>  
                     </div>
-                    <div><h1>Saved Videos</h1></div>
+                    <div className="pageContent">
+                        <div className="contentHeader">
+                            <h1>Your Videos</h1>
+                        </div>
+                        <div className="contentContainer">
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         )
