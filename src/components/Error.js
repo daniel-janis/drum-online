@@ -5,7 +5,7 @@ import { CgProfile } from 'react-icons/cg';
 import { IconContext } from 'react-icons';
 import { GiDrumKit } from 'react-icons/gi';
 
-class Recents extends React.Component {
+class Error extends React.Component {
     render() {
         return (
             //Homepage structure = Navigation Sidebar on left, Main page to the right.
@@ -47,11 +47,11 @@ class Recents extends React.Component {
                         </IconContext.Provider>
                         </div>  
                     </div>
-                    <div><h1>Recents</h1></div>
+                    <div className="error"><h1>Oops! Looks like this page doesn't exist. Head back to our home page <Link to="/homepage">here</Link>.</h1></div>
                 </div>
             </div>
         )
     }
 };
 
-export default Recents;
+export default Error;

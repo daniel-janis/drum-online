@@ -119,3 +119,8 @@ body {
     margin-right: 60px;
     margin-left: 60px;
 }
+
+.error {
+    margin-top: 100px;
+    margin-left: 100px;
+}

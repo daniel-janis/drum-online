@@ -31,11 +31,19 @@ class SavedArts extends React.Component {
                     <div className="header">
                         <div className="logoAndTitle">
                         <IconContext.Provider value={{ size:"75px", color:"white"}}>
-                            <div className="logo"><GiDrumKit /></div>
+                            <div className="logo">
+                                <Link to="/homepage">
+                                    <GiDrumKit />
+                                </Link>
+                            </div>
                         </IconContext.Provider>
                             <div className="title"><h1>Drum Online</h1></div>
                         <IconContext.Provider value={{ size:"75px", color:"white"}}>
-                            <div className="logo"><GiDrumKit /></div>
+                            <div className="logo">
+                                <Link to="/homepage">
+                                    <GiDrumKit />
+                                </Link>
+                            </div>
                         </IconContext.Provider>
                         </div>  
                     </div>
