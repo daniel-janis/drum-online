@@ -52,7 +52,7 @@ class Homepage extends React.Component {
                             <h1>Featured Lesson</h1>
                         </div>
                         <div className="contentContainer">
-                            <div>test</div>
+                            
                         </div>
                     </div>
                 </div>
