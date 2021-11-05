@@ -1,5 +1,6 @@
 import './Styles.css';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
 import { IconContext } from 'react-icons';
 import { GiDrumKit } from 'react-icons/gi';
@@ -20,13 +21,10 @@ class Articles extends React.Component {
                     <div className="login-signup">Login/Sign-Up</div>
                     <div className="logout">Logout</div>
                     <div className="navigation">
-                        <a href="./Profile.js">Profile</a>
-                        <a href="./Homepage.js">Featured</a>
-                        <a href="./Saved-Arts.js">Saved Articles</a>
-                        <a href="./Saved-Vids.js">Saved Videos</a>
-                        <a href="Recents.js">Recents</a>
-                        <a href="Articles.js">Articles</a>
-                        <a href="Videos.js">Videos</a>
+                    <Link to="/profile">Profile</Link>
+                        <Link to="/homepage">Homepage</Link>
+                        <Link to="/articles">Articles</Link>
+                        <Link to="/videos">Videos</Link>
                     </div>
                 </div>
                 <div className="main-body">
@@ -41,6 +39,7 @@ class Articles extends React.Component {
                         </IconContext.Provider>
                         </div>  
                     </div>
+                    <div><h1>Articles</h1></div>
                 </div>
             </div>
         )
