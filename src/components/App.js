@@ -2,6 +2,8 @@ import './Styles.css';
 import React from 'react';
 import {  Route, BrowserRouter as Router, Redirect, Switch } from 'react-router-dom';
 import Homepage from './Homepage';
+import Login from './Login';
+import Signup from './Signup';
 import Articles from './Articles';
 import Videos from './Videos';
 import Profile from './Profile';
@@ -19,6 +21,8 @@ class App extends React.Component{
                     <Route exact path="/">
                         <Redirect to="/homepage" />
                     </Route>
+                    <Route path="/Login" component={Login} />
+                    <Route path="/Signup" component={Signup} />
                     <Route path="/articles" component={Articles} />
                     <Route path="/videos" component={Videos} />
                     <Route path="/profile" component={Profile} />

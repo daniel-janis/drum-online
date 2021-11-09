@@ -1,5 +1,6 @@
 import './Styles.css';
 import React from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
 import { IconContext } from 'react-icons';
@@ -18,7 +19,7 @@ class Articles extends React.Component {
                         </IconContext.Provider>
                     </div>
                     <div className="userName">test</div>
-                    <div className="login-signup">Login/Sign-Up</div>
+                    <div className="login-signup"><Link to="/Login">Login/Sign-Up</Link></div>
                     <div className="logout">Logout</div>
                     <div className="navigation">
                     <Link to="/profile">Profile</Link>
@@ -52,7 +53,11 @@ class Articles extends React.Component {
                             <h1>Articles</h1>
                         </div>
                         <div className="contentContainer">
-                            
+                            <button className="testBtn" onClick={() => {
+                                axios.get("http://localhost:3001/api/getArticles")
+                                .then((req, res) => console.log(req.data))
+                                .catch((err) => console.log(err))
+                                }}>Test results</button>
                         </div>
                     </div>
                 </div>

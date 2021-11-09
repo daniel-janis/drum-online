@@ -18,7 +18,7 @@ class SavedVids extends React.Component {
                         </IconContext.Provider>
                     </div>
                     <div className="userName">test</div>
-                    <div className="login-signup">Login/Sign-Up</div>
+                    <div className="login-signup"><Link to="/Login">Login/Sign-Up</Link></div>
                     <div className="logout">Logout</div>
                     <div className="navigation">
                         <Link to="/profile">Profile</Link>
