@@ -52,7 +52,34 @@ class Signup extends React.Component {
                             <h1>Sign Up</h1>
                         </div>
                         <div className="contentContainer">
-                            
+                            <div className="signup-box">
+                                <h3>New User Registration</h3>
+                                <form className="signup-form">
+                                    <fieldset>
+                                        <label>
+                                            <p>First Name</p>
+                                            <input name="firstName" />
+                                        </label>
+                                        <label>
+                                            <p>Last Name</p>
+                                            <input name="lastName" />
+                                        </label>
+                                        <label>
+                                            <p>Username</p>
+                                            <input name="userName" />
+                                        </label>
+                                        <label>
+                                            <p>Email</p>
+                                            <input name="email" />
+                                        </label>
+                                        <label>
+                                            <p>Password</p>
+                                            <input name="password" />
+                                        </label>
+                                    </fieldset>
+                                    <button className="submit-btn" type="submit">Register</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,13 +1,37 @@
 import './Styles.css';
 import React from 'react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
 import { IconContext } from 'react-icons';
 import { GiDrumKit } from 'react-icons/gi';
 
-class Videos extends React.Component {
-    render() {
+function Videos() {
+
+    const [ allVideos, setAllVideos ] = useState([]);
+
+    useEffect(() => {
+        axios.get("http://localhost:3001/api/getVideos")
+        .then((req, res) => {
+                setAllVideos(
+                    req.data.map((video, index) => {
+                        console.log(video.videoThumbnail)
+                        return(
+                            <div className="video" key={index}>
+                                <div className="videoBlock">
+                                    <img src={video.videoThumbnail} alt="Video Thumbnail" className="thumbnails"/>
+                                    <h2><a href={video.videoLink} rel="noreferrer" target="_blank">{video.videoTitle}</a></h2>
+                                </div>
+                            </div>
+                        )
+                    }
+                )
+            )
+        })
+        .catch((err) => console.log(err))
+    },[])
+
         return (
             //Homepage structure = Navigation Sidebar on left, Main page to the right.
             //Sidebar oriented vertically, navigation is to other components
@@ -53,17 +77,12 @@ class Videos extends React.Component {
                             <h1>Video Lessons</h1>
                         </div>
                         <div className="contentContainer">
-                        <button className="testBtn" onClick={() => {
-                                axios.get("http://localhost:3001/api/getVideos")
-                                .then((req, res) => console.log(req.data))
-                                .catch((err) => console.log(err))
-                                }}>Test results</button>
+                            {allVideos}
                         </div>
                     </div>
                 </div>
             </div>
         )
-    }
 };
 
 export default Videos;

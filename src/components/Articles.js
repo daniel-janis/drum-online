@@ -1,13 +1,35 @@
 import './Styles.css';
 import React from 'react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
 import { IconContext } from 'react-icons';
 import { GiDrumKit } from 'react-icons/gi';
 
-class Articles extends React.Component {
-    render() {
+function Articles() {
+
+    const [ allArticles, setAllArticles ] = useState([]);
+
+    useEffect(() => {
+        axios.get("http://localhost:3001/api/getArticles")
+        .then((req, res) => {
+                setAllArticles(
+                    req.data.map((article, index) => {
+                        return(
+                            <div className="article" key={index}>
+                                <div>
+                                    <h2><a href={article.articleLink} rel="noreferrer" target="_blank">{article.articleTitle}</a></h2>
+                                </div>
+                            </div>
+                        )
+                    }
+                )
+            )
+        })
+        .catch((err) => console.log(err))
+    },[])
+
         return (
             //Homepage structure = Navigation Sidebar on left, Main page to the right.
             //Sidebar oriented vertically, navigation is to other components
@@ -53,17 +75,12 @@ class Articles extends React.Component {
                             <h1>Articles</h1>
                         </div>
                         <div className="contentContainer">
-                            <button className="testBtn" onClick={() => {
-                                axios.get("http://localhost:3001/api/getArticles")
-                                .then((req, res) => console.log(req.data))
-                                .catch((err) => console.log(err))
-                                }}>Test results</button>
+                            { allArticles }
                         </div>
                     </div>
                 </div>
             </div>
         )
-    }
 };
 
 export default Articles;

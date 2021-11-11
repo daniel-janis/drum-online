@@ -53,7 +53,22 @@ class Login extends React.Component {
                         <div>Not registered? <Link to="/Signup">Sign up!</Link></div>
                         </div>
                         <div className="contentContainer">
-                            
+                        <div className="login-box">
+                                <h3>New User Registration</h3>
+                                <form className="login-form">
+                                    <fieldset>
+                                        <label>
+                                            <p>Username</p>
+                                            <input name="userName" />
+                                        </label>
+                                        <label>
+                                            <p>Password</p>
+                                            <input name="password" />
+                                        </label>
+                                    </fieldset>
+                                    <button className="submit-btn" type="submit">Log In</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

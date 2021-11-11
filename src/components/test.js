@@ -1,0 +1,349 @@
+import './Styles.css';
+import React from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { CgProfile } from 'react-icons/cg';
+import { IconContext } from 'react-icons';
+import { GiDrumKit } from 'react-icons/gi';
+
+function Articles() {
+
+    const [ allArticles, setAllArticles ] = useState([]);
+
+    useEffect(() => {
+        axios.get("http://localhost:3001/api/getArticles")
+        .then((req, res) => {
+            console.log(req.data)
+                setAllArticles(
+                    req.data[0].map((article, index) => {
+                        return(
+                            <div className="article">
+                                <div>
+                                    <h2><a href="{article.articleLink}">{article.articleTitle}</a></h2>
+                                </div>
+                            </div>
+                        )
+                    }
+                )
+            )
+        })
+        .catch((err) => console.log(err))
+    },[])
+
+        return (
+            //Homepage structure = Navigation Sidebar on left, Main page to the right.
+            //Sidebar oriented vertically, navigation is to other components
+            <div className="full-page">
+                <div className="sidebar"> 
+                    <div className="profile-pic">
+                        <IconContext.Provider value={{ size:"100px "}}>
+                            <CgProfile />
+                        </IconContext.Provider>
+                    </div>
+                    <div className="userName">test</div>
+                    <div className="login-signup"><Link to="/Login">Login/Sign-Up</Link></div>
+                    <div className="logout">Logout</div>
+                    <div className="navigation">
+                    <Link to="/profile">Profile</Link>
+                        <Link to="/homepage">Homepage</Link>
+                        <Link to="/articles">Articles</Link>
+                        <Link to="/videos">Videos</Link>
+                    </div>
+                </div>
+                <div className="main-body">
+                    <div className="header">
+                        <div className="logoAndTitle">
+                        <IconContext.Provider value={{ size:"75px", color:"white"}}>
+                            <div className="logo">
+                                <Link to="/homepage">
+                                    <GiDrumKit />
+                                </Link>
+                            </div>
+                        </IconContext.Provider>
+                            <div className="title"><h1>Drum Online</h1></div>
+                        <IconContext.Provider value={{ size:"75px", color:"white"}}>
+                            <div className="logo">
+                                <Link to="/homepage">
+                                    <GiDrumKit />
+                                </Link>
+                            </div>
+                        </IconContext.Provider>
+                        </div>  
+                    </div>
+                    <div className="pageContent">
+                        <div className="contentHeader">
+                            <h1>Articles</h1>
+                        </div>
+                        <div className="contentContainer">
+                            { allArticles }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+};
+
+export default Articles;
+
+
+
+
+
+import './Styles.css';
+import React from 'react';
+// import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { CgProfile } from 'react-icons/cg';
+import { IconContext } from 'react-icons';
+import { GiDrumKit } from 'react-icons/gi';
+
+class Articles extends React.Component {
+
+    state = {allArticles:[]}
+
+    // componentDidMount() {
+    //     axios.get("http://localhost:3001/api/getArticles")
+    //     .then((req, res) => {
+    //         console.log(req.data)
+    //             this.state.allArticles(
+    //                 req.data[0].map((article, index) => {
+    //                     return(
+    //                         <div className="article">
+    //                             <div>
+    //                                 <h2><a href="{article.articleLink}">{article.articleTitle}</a></h2>
+    //                             </div>
+    //                         </div>
+    //                     )
+    //                 }
+    //             )
+    //         )
+    //     })
+    //     .catch((err) => console.log(err))
+    // }
+
+    render() {
+        return (
+            //Homepage structure = Navigation Sidebar on left, Main page to the right.
+            //Sidebar oriented vertically, navigation is to other components
+            <div className="full-page">
+                <div className="sidebar"> 
+                    <div className="profile-pic">
+                        <IconContext.Provider value={{ size:"100px "}}>
+                            <CgProfile />
+                        </IconContext.Provider>
+                    </div>
+                    <div className="userName">test</div>
+                    <div className="login-signup"><Link to="/Login">Login/Sign-Up</Link></div>
+                    <div className="logout">Logout</div>
+                    <div className="navigation">
+                    <Link to="/profile">Profile</Link>
+                        <Link to="/homepage">Homepage</Link>
+                        <Link to="/articles">Articles</Link>
+                        <Link to="/videos">Videos</Link>
+                    </div>
+                </div>
+                <div className="main-body">
+                    <div className="header">
+                        <div className="logoAndTitle">
+                        <IconContext.Provider value={{ size:"75px", color:"white"}}>
+                            <div className="logo">
+                                <Link to="/homepage">
+                                    <GiDrumKit />
+                                </Link>
+                            </div>
+                        </IconContext.Provider>
+                            <div className="title"><h1>Drum Online</h1></div>
+                        <IconContext.Provider value={{ size:"75px", color:"white"}}>
+                            <div className="logo">
+                                <Link to="/homepage">
+                                    <GiDrumKit />
+                                </Link>
+                            </div>
+                        </IconContext.Provider>
+                        </div>  
+                    </div>
+                    <div className="pageContent">
+                        <div className="contentHeader">
+                            <h1>Articles</h1>
+                        </div>
+                        <div className="contentContainer">
+                            {/* {allArticles} */}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+};
+
+export default Articles;
+
+
+
+
+
+import './Styles.css';
+import React from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { CgProfile } from 'react-icons/cg';
+import { IconContext } from 'react-icons';
+import { GiDrumKit } from 'react-icons/gi';
+
+function Videos() {
+
+    const [ allVideos, setAllVideos ] = useState([]);
+
+    useEffect(() => {
+        axios.get("http://localhost:3001/api/getVideos")
+        .then((req, res) => {
+            console.log(req.data)
+                setAllVideos(
+                    req.data.map((video, index) => {
+                        return(
+                            <div className="video" key={index}>
+                                <div>
+                                    <img src={video.videoThumbnail} />
+                                    <h2><a href={video.videoLink} target="_blank">{video.videoTitle}</a></h2>
+                                </div>
+                            </div>
+                        )
+                    }
+                )
+            )
+        })
+        .catch((err) => console.log(err))
+    },[])
+
+        return (
+            //Homepage structure = Navigation Sidebar on left, Main page to the right.
+            //Sidebar oriented vertically, navigation is to other components
+            <div className="full-page">
+                <div className="sidebar"> 
+                    <div className="profile-pic">
+                        <IconContext.Provider value={{ size:"100px "}}>
+                            <CgProfile />
+                        </IconContext.Provider>
+                    </div>
+                    <div className="userName">test</div>
+                    <div className="login-signup"><Link to="/Login">Login/Sign-Up</Link></div>
+                    <div className="logout">Logout</div>
+                    <div className="navigation">
+                        <Link to="/profile">Profile</Link>
+                        <Link to="/homepage">Homepage</Link>
+                        <Link to="/articles">Articles</Link>
+                        <Link to="/videos">Videos</Link>
+                    </div>
+                </div>
+                <div className="main-body">
+                    <div className="header">
+                        <div className="logoAndTitle">
+                        <IconContext.Provider value={{ size:"75px", color:"white"}}>
+                            <div className="logo">
+                                <Link to="/homepage">
+                                    <GiDrumKit />
+                                </Link>
+                            </div>
+                        </IconContext.Provider>
+                            <div className="title"><h1>Drum Online</h1></div>
+                        <IconContext.Provider value={{ size:"75px", color:"white"}}>
+                            <div className="logo">
+                                <Link to="/homepage">
+                                    <GiDrumKit />
+                                </Link>
+                            </div>
+                        </IconContext.Provider>
+                        </div>  
+                    </div>
+                    <div className="pageContent">
+                        <div className="contentHeader">
+                            <h1>Video Lessons</h1>
+                        </div>
+                        <div className="contentContainer">
+                            {allVideos}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+};
+
+export default Videos;
+
+
+
+
+import './Styles.css';
+import React from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { CgProfile } from 'react-icons/cg';
+import { IconContext } from 'react-icons';
+import { GiDrumKit } from 'react-icons/gi';
+
+class Videos extends React.Component {
+
+    componentDidMount() {
+        axios.get("http://localhost:3001/api/getVideos")
+        .then((req, res) => console.log(req.data))
+        .catch((err) => console.log(err))
+    }
+
+    render() {
+        return (
+            //Homepage structure = Navigation Sidebar on left, Main page to the right.
+            //Sidebar oriented vertically, navigation is to other components
+            <div className="full-page">
+                <div className="sidebar"> 
+                    <div className="profile-pic">
+                        <IconContext.Provider value={{ size:"100px "}}>
+                            <CgProfile />
+                        </IconContext.Provider>
+                    </div>
+                    <div className="userName">test</div>
+                    <div className="login-signup"><Link to="/Login">Login/Sign-Up</Link></div>
+                    <div className="logout">Logout</div>
+                    <div className="navigation">
+                        <Link to="/profile">Profile</Link>
+                        <Link to="/homepage">Homepage</Link>
+                        <Link to="/articles">Articles</Link>
+                        <Link to="/videos">Videos</Link>
+                    </div>
+                </div>
+                <div className="main-body">
+                    <div className="header">
+                        <div className="logoAndTitle">
+                        <IconContext.Provider value={{ size:"75px", color:"white"}}>
+                            <div className="logo">
+                                <Link to="/homepage">
+                                    <GiDrumKit />
+                                </Link>
+                            </div>
+                        </IconContext.Provider>
+                            <div className="title"><h1>Drum Online</h1></div>
+                        <IconContext.Provider value={{ size:"75px", color:"white"}}>
+                            <div className="logo">
+                                <Link to="/homepage">
+                                    <GiDrumKit />
+                                </Link>
+                            </div>
+                        </IconContext.Provider>
+                        </div>  
+                    </div>
+                    <div className="pageContent">
+                        <div className="contentHeader">
+                            <h1>Video Lessons</h1>
+                        </div>
+                        <div className="contentContainer">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+};
+
+export default Videos;
