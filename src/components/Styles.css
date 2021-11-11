@@ -172,6 +172,7 @@ body {
     height: auto;
     width: 100%;
     margin: 0 auto;
+    margin-left: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -246,22 +247,14 @@ input {
     border-radius: 5px;
 }
 
-.article {
-    margin-left: 500px;
-    padding: 50px;
-}
-
 .video {
-    margin-left: 200px;
-    padding: 50px;
-}
-
-.videoBlock {
+    padding: 30px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     align-items: center;
+    justify-content: center;
 }
+
 
 .thumbnails {
     height: 200px;
@@ -290,4 +283,10 @@ input {
     align-items: center;
     justify-content: space-around;
     margin-top: 50px;
+}
+
+.undoneDrums {
+    height: 300px;
+    margin-top: 30px;
+    border-radius: 30px;
 }

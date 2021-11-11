@@ -15,7 +15,6 @@ function Homepage () {
     useEffect(() => {
         axios.get("http://localhost:3001/api/getFeaturedArticle")
         .then((req, res) => {
-            console.log(req.data)
                 setFeaturedArticle(
                     req.data.map((lesson, index) => {
                         return(
@@ -32,12 +31,11 @@ function Homepage () {
         .catch((err) => console.log(err))
         axios.get("http://localhost:3001/api/getFeaturedVideo")
         .then((req, res) => {
-            console.log(req.data)
             setFeaturedVideo(
                 req.data.map((lesson, index) => {
                     return(
                         <div className="featuredVideo" key={index}>
-                            <img src={lesson.videoThumbnail} alt="Video Thumbnail" className="thumbnails"/>
+                            <img src={`https://drum-online-pictures.s3.us-east-2.amazonaws.com/${lesson.videoThumbnailS3}`} alt="Video Thumbnail" className="thumbnails"/>
                             <h2><a href={lesson.videoLink} rel="noreferrer" target="_blank">{lesson.videoTitle}</a></h2>
                         </div>
                     )

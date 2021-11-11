@@ -1,5 +1,6 @@
 import './Styles.css';
 import React from 'react';
+import Drumset from '../images/under-construction.jpeg';
 import { Link } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
 import { IconContext } from 'react-icons';
@@ -52,7 +53,10 @@ class SavedVids extends React.Component {
                             <h1>Your Videos</h1>
                         </div>
                         <div className="contentContainer">
-                            
+                            <div>
+                                This page is still under construction
+                            </div>
+                            <img src={Drumset} alt="Assembling Drumset" className="undoneDrums" />
                         </div>
                     </div>
                 </div>

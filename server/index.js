@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const sequel = require('./database/sequel');
-// const usersModel = require('./models/users')
 
 const app = express();
 

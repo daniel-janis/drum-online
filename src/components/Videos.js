@@ -16,14 +16,11 @@ function Videos() {
         .then((req, res) => {
                 setAllVideos(
                     req.data.map((video, index) => {
-                        console.log(video.videoThumbnail)
                         return(
-                            <div className="video" key={index}>
-                                <div className="videoBlock">
-                                    <img src={video.videoThumbnail} alt="Video Thumbnail" className="thumbnails"/>
+                                <div className="video" key={index}>
+                                    <img src={`https://drum-online-pictures.s3.us-east-2.amazonaws.com/${video.videoThumbnailS3}`} alt="Video Thumbnail" className="thumbnails"/>
                                     <h2><a href={video.videoLink} rel="noreferrer" target="_blank">{video.videoTitle}</a></h2>
                                 </div>
-                            </div>
                         )
                     }
                 )
