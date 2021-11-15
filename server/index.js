@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const sequel = require('./database/sequel');
+const { sequelize } = require('./models/users');
+const users = require('./models/users');
 
 const app = express();
 
@@ -31,6 +33,23 @@ app.get('/api/getFeaturedArticle', async (req, res) => {
 app.get('/api/getFeaturedVideo', async (req, res) => {
     var featuredVideo = await sequel.query('SELECT * FROM videos WHERE id = 34')
     res.json(featuredVideo[0])
+})
+
+app.post('/api/postNewUser', async (req, res) => {
+    console.log(req.body)
+    firstName = req.body.firstName
+    lastName = req.body.lastName
+    userName = req.body.userName
+    eMail = req.body.email
+    passWord = req.body.password
+    const userData = await users.create({
+        username:userName,
+        email:eMail,
+        password:passWord,
+        first_name:firstName,
+        last_name:lastName,
+    })
+    res.send(userData)
 })
 
 

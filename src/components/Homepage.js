@@ -90,7 +90,7 @@ function Homepage () {
                         <div className="contentHeader">
                             <h1>Featured Lesson</h1>
                         </div>
-                        <div className="contentContainer">
+                        <div className="contentContainerCentered">
                             <div className="featuredLesson">
                                 { featuredArticle }
                                 { featuredVideo }

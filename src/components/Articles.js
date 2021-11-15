@@ -75,7 +75,10 @@ function Articles() {
                             <h1>Articles</h1>
                         </div>
                         <div className="contentContainer">
-                            { allArticles }
+                            <div className="articlesAndRudiments">
+                                
+                                { allArticles }
+                            </div>
                         </div>
                     </div>
                 </div>

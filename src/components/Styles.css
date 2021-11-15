@@ -179,6 +179,16 @@ body {
     align-items: baseline;
 }
 
+.contentContainerCentered {
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .signup-box {
     width: 300px;
     height: auto;
@@ -294,3 +304,22 @@ input {
 img {
     border-radius: 10px;
 }
+
+.article {
+    margin-top: 40px;
+}
+
+.login-box {
+    border-radius: 10px;
+}
+
+.signup-box {
+    border-radius: 10px;
+}
+
+.error {
+    color: red;
+    font-family: sans-serif;
+    font-size: 12px;
+    height: 30px;
+  }

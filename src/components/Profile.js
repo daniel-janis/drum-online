@@ -51,7 +51,7 @@ class Profile extends React.Component {
                         <div className="contentHeader">
                             <h1>Your Profile</h1>
                         </div>
-                        <div className="contentContainer">      
+                        <div className="contentContainerCentered">      
                             <div>
                                 <Link to="/saved-articles">Saved Articles</Link>
                             </div>

@@ -8,14 +8,20 @@ const users = connection.define("users", {
         allowNull: false,
         autoIncrement: true,
     },
-    Username:{
+    username:{
         type: DataTypes.STRING(30)
     },
-    Password:{
+    password:{
         type: DataTypes.STRING(255)
     },
-    Email:{
+    email:{
         type: DataTypes.STRING(75)
+    },
+    first_name:{
+        type: DataTypes.STRING(30)
+    },
+    last_name:{
+        type: DataTypes.STRING(50)
     },
     createdAt:{
         type: DataTypes.DATE,
@@ -24,7 +30,7 @@ const users = connection.define("users", {
     updatedAt:{
         type: DataTypes.DATE,
         allowNull: true
-    }
+    },
 })
 
 users.sync({alter: true});

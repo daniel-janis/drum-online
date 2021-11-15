@@ -52,7 +52,7 @@ class SavedVids extends React.Component {
                         <div className="contentHeader">
                             <h1>Your Videos</h1>
                         </div>
-                        <div className="contentContainer">
+                        <div className="contentContainerCentered">
                             <div>
                                 This page is still under construction
                             </div>

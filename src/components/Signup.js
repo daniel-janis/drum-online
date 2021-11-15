@@ -1,12 +1,40 @@
 import './Styles.css';
 import React from 'react';
+// import axios from 'axios';
+// import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
 import { IconContext } from 'react-icons';
 import { GiDrumKit } from 'react-icons/gi';
+import axios from 'axios';
 
-class Signup extends React.Component {
-    render() {
+function Signup () {
+
+    const postUser = (event) => {
+        event.preventDefault()
+        var fName = event.target.firstName.value
+        var lName = event.target.lastName.value
+        var uName = event.target.userName.value
+        var email = event.target.email.value
+        var pWord = event.target.password.value
+        axios.post("http://localhost:3001/api/postNewUser", {
+            firstName:fName,
+            lastName:lName,
+            userName:uName,
+            email:email,
+            password:pWord
+        })
+        .then((req, res) => {
+            console.log(req.data)
+        })
+        event.target.firstName.value = '';
+        event.target.lastName.value = '';
+        event.target.userName.value = '';
+        event.target.email.value = '';
+        event.target.password.value = '';
+    }
+
+    
         return (
             //Homepage structure = Navigation Sidebar on left, Main page to the right.
             //Sidebar oriented vertically, navigation is to other components
@@ -51,30 +79,35 @@ class Signup extends React.Component {
                         <div className="contentHeader">
                             <h1>Sign Up</h1>
                         </div>
-                        <div className="contentContainer">
+                        <div className="contentContainerCentered">
                             <div className="signup-box">
                                 <h3>New User Registration</h3>
-                                <form className="signup-form">
+                                <form className="signup-form" onSubmit={postUser}>
                                     <fieldset>
                                         <label>
                                             <p>First Name</p>
                                             <input name="firstName" />
+                                            
                                         </label>
                                         <label>
                                             <p>Last Name</p>
                                             <input name="lastName" />
+                                            
                                         </label>
                                         <label>
                                             <p>Username</p>
                                             <input name="userName" />
+                                            
                                         </label>
                                         <label>
                                             <p>Email</p>
                                             <input name="email" />
+                                            
                                         </label>
                                         <label>
                                             <p>Password</p>
                                             <input name="password" />
+                                            
                                         </label>
                                     </fieldset>
                                     <button className="submit-btn" type="submit">Register</button>
@@ -85,7 +118,6 @@ class Signup extends React.Component {
                 </div>
             </div>
         )
-    }
 };
 
 export default Signup;

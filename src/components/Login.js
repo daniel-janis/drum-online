@@ -1,12 +1,14 @@
 import './Styles.css';
 import React from 'react';
+// import axios from 'axios';
+// import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
 import { IconContext } from 'react-icons';
 import { GiDrumKit } from 'react-icons/gi';
 
-class Login extends React.Component {
-    render() {
+function Login () {
+    
         return (
             //Homepage structure = Navigation Sidebar on left, Main page to the right.
             //Sidebar oriented vertically, navigation is to other components
@@ -52,9 +54,9 @@ class Login extends React.Component {
                             <div><h1>Login</h1></div>
                         <div>Not registered? <Link to="/Signup">Sign up!</Link></div>
                         </div>
-                        <div className="contentContainer">
+                        <div className="contentContainerCentered">
                         <div className="login-box">
-                                <h3>New User Registration</h3>
+                                <h3>User Login</h3>
                                 <form className="login-form">
                                     <fieldset>
                                         <label>
@@ -74,7 +76,6 @@ class Login extends React.Component {
                 </div>
             </div>
         )
-    }
 };
 
 export default Login;
