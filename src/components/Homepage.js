@@ -1,13 +1,20 @@
 import './Styles.css';
 import React from 'react';
 import axios from 'axios';
+import UserService from './UserService';
+import AuthService from './AuthService';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
 import { IconContext } from 'react-icons';
 import { GiDrumKit } from 'react-icons/gi';
 
+
 function Homepage () {
+
+    if (!UserService.get().username) {
+        AuthService.auth()
+    }
 
     const [ featuredArticle, setFeaturedArticle ] = useState([]);
     const [ featuredVideo, setFeaturedVideo ] = useState([]);
@@ -56,9 +63,8 @@ function Homepage () {
                             <CgProfile />
                         </IconContext.Provider>
                     </div>
-                    <div className="userName">test</div>
-                    <div className="login-signup"><Link to="/Login">Login/Sign-Up</Link></div>
-                    <div className="logout">Logout</div>
+                    <div className="userName">{UserService.get().username}</div>
+                    <div className="logout" onClick={AuthService.logout}>Logout</div>
                     <div className="navigation">
                         <Link to="/profile">Profile</Link>
                         <Link to="/homepage">Homepage</Link>

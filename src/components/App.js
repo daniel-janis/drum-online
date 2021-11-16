@@ -17,11 +17,11 @@ class App extends React.Component{
         return (
             <Router>
                 <Switch>
-                    <Route path="/homepage" component={Homepage} />
-                    <Route exact path="/">
-                        <Redirect to="/homepage" />
-                    </Route>
                     <Route path="/Login" component={Login} />
+                    <Route exact path="/">
+                        <Redirect to="/Login" />
+                    </Route>
+                    <Route path="/homepage" component={Homepage} />
                     <Route path="/Signup" component={Signup} />
                     <Route path="/articles" component={Articles} />
                     <Route path="/videos" component={Videos} />

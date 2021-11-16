@@ -1,12 +1,20 @@
 import './Styles.css';
 import React from 'react';
+import UserService from './UserService';
+import AuthService from './AuthService';
 import { Link } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
 import { IconContext } from 'react-icons';
 import { GiDrumKit } from 'react-icons/gi';
 
 class Profile extends React.Component {
+
     render() {
+
+        if (!UserService.get().username) {
+            AuthService.auth()
+        }
+
         return (
             //Homepage structure = Navigation Sidebar on left, Main page to the right.
             //Sidebar oriented vertically, navigation is to other components
@@ -17,9 +25,8 @@ class Profile extends React.Component {
                             <CgProfile />
                         </IconContext.Provider>
                     </div>
-                    <div className="userName">test</div>
-                    <div className="login-signup"><Link to="/Login">Login/Sign-Up</Link></div>
-                    <div className="logout">Logout</div>
+                    <div className="userName">{UserService.get().username}</div>
+                    <div className="logout" onClick={AuthService.logout}>Logout</div>
                     <div className="navigation">
                         <Link to="/profile">Profile</Link>
                         <Link to="/homepage">Homepage</Link>
